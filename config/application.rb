@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Blog
+module RecipesExceptionsExample
   class Application < Rails::Application
 
     config.exceptions_app = ->(env) { ExceptionController.action(:show).call(env) }
