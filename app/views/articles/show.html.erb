@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<article>
+  <h2><%= @article.title %></h2>
+
+  <%= simple_format @article.body %>
+
+  <nav>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Back', articles_path %>
+  </nav>
+</article>
