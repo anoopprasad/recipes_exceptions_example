@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
 
+    raise BadTaste, "Clams are grose" if @article.title =~ /vongole/i
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @article }
@@ -80,4 +82,6 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  class ::BadTaste < ::StandardError; end
 end
