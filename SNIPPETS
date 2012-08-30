@@ -55,3 +55,8 @@ class ExceptionController < ActionController::Base
   helper_method :details
 
 end
+
+app/controllers/articles_controller.rb
+--------------------------------------
+class ::BadTaste < ::StandardError; end
+raise BadTaste, "Clams are grose" if @article.title =~ /vongole/i
